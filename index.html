@@ -30,10 +30,12 @@
             </div>
             <div class="pure-control-group">
               <label>Wind Direction (°)</label>
-              <input name="WIND_FROM" class="number-input" type="text" placeholder="e.g. 180">
+              <input name="WIND_FROM" id="wind-from" class="number-input" type="text" placeholder="e.g. 180">
               to
-              <input name="WIND_TO" class="number-input" type="text" placeholder="e.g. 350">
+              <input name="WIND_TO" id="wind-to" class="number-input" type="text" placeholder="e.g. 350">
+              <canvas id="windDirection" width="100" height="100" />
             </div>
+  </body>
             <div class="pure-control-group">
               <label>Email Address</label>
               <input name="EMAIL" class="email" type="text" placeholder="email@example.com">
@@ -47,6 +49,24 @@
       </div>
       <div class="pure-u-1-5"></div>
     </div>
+    <script type="text/javascript" charset="utf-8">
+      document.getElementById("wind-from").addEventListener("keyup", updateWindDirection);
+      document.getElementById("wind-to").addEventListener("keyup", updateWindDirection);
+
+      function updateWindDirection() {
+        var radius=30
+        var from = document.getElementById("wind-from").value;
+        var to = document.getElementById("wind-to").value;
+        var canvas = document.getElementById("windDirection");
+        var ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.fillStyle = '#64b3f4';
+        ctx.moveTo(radius, radius);
+        ctx.arc(radius,radius,radius,(from-90)*(Math.PI/180),(to-90)*(Math.PI/180));
+        ctx.fill();
+      }
+    </script>
     <script type="text/javascript" charset="utf-8">
 var map = L.map('map').setView([48.06534,8.01349], 13);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
