@@ -6,6 +6,9 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:300italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
   </head>
   <body>
     <div class="pure-g background">
@@ -17,12 +20,10 @@
         <div class="claim-small">
           Subscribe and get notified when the wind looks good tomorrow
         </div>
+        <div id="map"></div>
         <form action="http://parawind.us12.list-manage.com/subscribe/post?u=2dce060824ff8f04a3bc42c73&amp;id=6709713fd7" target="_blank" method="post" class="pure-form pure-form-aligned">
           <fieldset>
-            <div class="pure-control-group">
-              <label>Location</label>
-              <input name="LOCATION" class="location" type="text" placeholder="e.g. 48.06512, 8.01624">
-            </div>
+            <input name="LOCATION" id="location" type="hidden">
             <div class="pure-control-group">
               <label>Max. Wind Speed (km/h)</label>
               <input name="WIND_MAX" class="max-wind" type="text" placeholder="e.g. 20">
@@ -46,5 +47,16 @@
       </div>
       <div class="pure-u-1-5"></div>
     </div>
+    <script type="text/javascript" charset="utf-8">
+var map = L.map('map').setView([48.06534,8.01349], 13);
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
+
+var marker = L.marker([51.5, -0.09]).addTo(map);
+
+map.on('click', function(e) {
+  document.getElementById('location').value = e.latlng.lat + ', ' + e.latlng.lng;
+  marker.setLatLng(e.latlng);
+});
+    </script>
   </body>
 </html>
