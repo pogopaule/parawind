@@ -23,21 +23,21 @@
         <div id="map"></div>
         <form action="http://parawind.us12.list-manage.com/subscribe/post?u=2dce060824ff8f04a3bc42c73&amp;id=6709713fd7" target="_blank" method="post" class="pure-form pure-form-aligned">
           <fieldset>
-            <input name="LOCATION" id="location" type="hidden">
+            <input name="LOCATION" value="48.06534,8.01349" id="location" type="hidden">
             <div class="pure-control-group">
               <label>Max. Wind Speed (km/h)</label>
-              <input name="WIND_MAX" class="max-wind" type="text" placeholder="e.g. 20">
+              <input name="WIND_MAX" class="max-wind" type="number" min="1" max="50" step="1" required placeholder="e.g. 20">
             </div>
             <div class="pure-control-group">
               <label>Wind Direction (°)</label>
-              <input name="WIND_FROM" id="wind-from" class="number-input" type="text" placeholder="e.g. 180">
+              <input name="WIND_FROM" id="wind-from" class="number-input" type="number" min="0" max="359" step="1" required placeholder="e.g. 180">
               to
-              <input name="WIND_TO" id="wind-to" class="number-input" type="text" placeholder="e.g. 350">
+              <input name="WIND_TO" id="wind-to" class="number-input" type="number" min="0" max="359" step="1" required placeholder="e.g. 350">
             </div>
   </body>
             <div class="pure-control-group">
               <label>Email Address</label>
-              <input name="EMAIL" class="email" type="text" placeholder="email@example.com">
+              <input name="EMAIL" class="email" type="email" required placeholder="email@example.com">
             </div>
             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_2dce060824ff8f04a3bc42c73_6709713fd7" tabindex="-1" value=""></div>
             <div class="pure-controls">
@@ -52,7 +52,7 @@
 var map = L.map('map').setView([48.06534,8.01349], 13);
 L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
 
-var marker = L.marker([51.5, -0.09]).addTo(map);
+var marker = L.marker([48.06534,8.01349]).addTo(map);
 
 map.on('click', function(e) {
   document.getElementById('location').value = e.latlng.lat + ', ' + e.latlng.lng;
