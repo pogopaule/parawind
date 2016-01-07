@@ -29,6 +29,10 @@ input[type] {
 }
 
 .frame {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   padding: 30px;
 }
@@ -39,7 +43,7 @@ input[type] {
 
 @media all and (max-width: 600px) {
   .frame {
-    flex-wrap: wrap;
+    -webkit-flex-flow: row wrap;
   }
 
   .form {
