@@ -20,6 +20,7 @@ input {
   box-sizing: border-box;
   margin-bottom: 10px;
   margin-top: 3px;
+  -webkit-appearance: none;
   border-radius: 0;
 }
 
