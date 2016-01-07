@@ -1,10 +1,51 @@
-html {
-  font-family: 'Raleway', sans-serif;
+body, button, input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+button {
+  border: 3px solid #000;
+  background-color: #fff;
+  font-size: 20px;
+}
+
+button:hover {
+  box-shadow: 3px 3px 0px 0px #000;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 10px;
 }
 
 #map {
-  height: 180px;
-  width: 380px;
-  margin-left: 180px;
+  height: 300px;
 }
 
+.frame {
+  display: flex;
+  padding: 30px;
+  height: 400px;
+}
+
+.frame > * {
+  flex: 1 100%;
+}
+
+@media all and (max-width: 600px) {
+  .frame {
+    flex-wrap: wrap;
+  }
+
+  .form {
+    padding-top: 30px;
+  }
+}
+@media all and (min-width: 601px) {
+  .form {
+    padding-left: 30px;
+  }
+}
