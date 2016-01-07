@@ -3,50 +3,49 @@
   <head>
     <meta charset="utf-8">
     <title>parawind.info</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="pure-min.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="leaflet.css" />
     <script src="leaflet.js"></script>
   </head>
   <body>
-    <div class="pure-g background">
-      <div class="pure-u-1-5"></div>
-      <div class="pure-u-3-5">
-        <div class="claim">
+    <div>
+      <div></div>
+      <div>
+        <div>
           parawind
         </div>
-        <div class="claim-small">
+        <div>
           Subscribe and get notified when the wind looks good tomorrow
         </div>
         <div id="map"></div>
-        <form action="http://parawind.us12.list-manage.com/subscribe/post?u=2dce060824ff8f04a3bc42c73&amp;id=6709713fd7" target="_blank" method="post" class="pure-form pure-form-aligned">
+        <form action="https://parawind.us12.list-manage.com/subscribe/post?u=2dce060824ff8f04a3bc42c73&amp;id=6709713fd7" target="_blank" method="post">
           <fieldset>
             <input name="LOCATION" value="48.06534,8.01349" id="location" type="hidden">
-            <div class="pure-control-group">
+            <div>
               <label>Max. Wind Speed (km/h)</label>
-              <input name="WIND_MAX" class="max-wind" type="number" min="1" max="50" step="1" required placeholder="e.g. 20">
+              <input name="WIND_MAX" type="number" min="1" max="50" step="1" required placeholder="e.g. 20">
             </div>
-            <div class="pure-control-group">
+            <div>
               <label>Wind Direction (°)</label>
-              <input name="WIND_FROM" id="wind-from" class="number-input" type="number" min="0" max="359" step="1" required placeholder="e.g. 180">
+              <input name="WIND_FROM" id="wind-from" type="number" min="0" max="359" step="1" required placeholder="e.g. 180">
               to
-              <input name="WIND_TO" id="wind-to" class="number-input" type="number" min="0" max="359" step="1" required placeholder="e.g. 350">
+              <input name="WIND_TO" id="wind-to" type="number" min="0" max="359" step="1" required placeholder="e.g. 350">
             </div>
   </body>
-            <div class="pure-control-group">
+            <div>
               <label>Email Address</label>
-              <input name="EMAIL" class="email" type="email" required placeholder="email@example.com">
+              <input name="EMAIL" type="email" required placeholder="email@example.com">
             </div>
             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_2dce060824ff8f04a3bc42c73_6709713fd7" tabindex="-1" value=""></div>
-            <div class="pure-controls">
-              <button type="submit" class="pure-button subscribe">Notify me!</button>
+            <div>
+              <button type="submit">Notify me!</button>
             </div>
           </fieldset>
         </form>
       </div>
-      <div class="pure-u-1-5"></div>
+      <div></div>
     </div>
     <script type="text/javascript" charset="utf-8">
 var map = L.map('map').setView([48.06534,8.01349], 13);
