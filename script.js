@@ -9,6 +9,11 @@ map.on('click', function(e) {
   marker.setLatLng(e.latlng);
 });
 
+map.on('locationfound', function(e) {
+  marker.setLatLng(e.latlng);
+});
+
+map.locate({setView: true});
 
 
 
