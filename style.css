@@ -3,14 +3,38 @@ body, button, input {
   font-size: 14px;
 }
 
+body {
+  padding: 30px;
+}
+
 button {
-  border: 3px solid #000;
+  border: 1px solid #000;
   background-color: #fff;
   font-size: 20px;
 }
 
 button:hover {
   box-shadow: 3px 3px 0px 0px #000;
+}
+
+.fine-print {
+  color: #ccc;
+  font-size: 10px;
+  margin-left: 10px;
+}
+
+.contact {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #ccc;
+}
+
+.contact a:hover {
+  text-decoration: underline;
 }
 
 input[type] {
@@ -24,21 +48,46 @@ input[type] {
   border-radius: 0;
 }
 
+input:focus {
+  border: 1px solid #000;
+  outline: none;
+  box-shadow: 3px 3px 0px 0px #000;
+}
+
+.claim {
+  font-size: 22px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+  text-align: center;
+  font-weight: bold;
+}
+
 #map {
   height: 303px;
 }
 
-.form {
+#form {
   padding-left: 30px;
 }
 
-.frame {
+#windRose {
+  margin-left: 20px;
+  margin-top: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+#windInput {
+  width: 100%;
+}
+
+.frame, .wind-direction-container {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  padding: 30px;
 }
 
 .frame > * {

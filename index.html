@@ -7,41 +7,41 @@
     <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="leaflet.css" />
-    <script src="leaflet.js"></script>
   </head>
   <body>
+    <div class="claim">
+      &#9675; Subscribe and get an email a day before good wind conditions &#9675;
+    </div>
     <div class="frame">
       <div id="map"></div>
-      <form class="form" action="https://parawind.us12.list-manage.com/subscribe/post?u=2dce060824ff8f04a3bc42c73&amp;id=6709713fd7" target="_blank" method="post">
+      <form id="form" action="https://parawind.us12.list-manage.com/subscribe/post?u=2dce060824ff8f04a3bc42c73&amp;id=6709713fd7" method="post">
         <input name="LOCATION" value="48.06534,8.01349" id="location" type="hidden">
         <div>
           <label>Maximum Wind Speed (km/h)</label>
           <input name="WIND_MAX" type="number" min="1" max="50" step="1" required placeholder="e.g. 20">
         </div>
-        <div>
-          <label>Wind Direction (°)</label>
-          <input name="WIND_FROM" id="wind-from" type="number" min="0" max="359" step="1" required placeholder="e.g. 180">
-          to
-          <input name="WIND_TO" id="wind-to" type="number" min="0" max="359" step="1" required placeholder="e.g. 350">
+        <div class="wind-direction-container">
+          <div id="windInput">
+            <label>Wind Direction (°)</label>
+            <input name="WIND_FROM" id="wind-from" type="number" min="0" max="359" step="1" required placeholder="e.g. 180">
+            <label>to</label>
+            <input name="WIND_TO" id="wind-to" type="number" min="0" max="359" step="1" required placeholder="e.g. 350">
+          </div>
+          <canvas id="windRose" width="120" height="120">
         </div>
         <div>
           <label>Email Address</label>
           <input name="EMAIL" type="email" required placeholder="email@example.com">
         </div>
         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_2dce060824ff8f04a3bc42c73_6709713fd7" tabindex="-1" value=""></div>
-        <button type="submit">Notify me!</button>
+        <button type="submit">Subscribe</button>
+        <span class="fine-print">This service is for free and your email address will not be used for any other purposes.</span>
       </form>
     </div>
-    <script type="text/javascript" charset="utf-8">
-var map = L.map('map').setView([48.06534,8.01349], 13);
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
-
-var marker = L.marker([48.06534,8.01349]).addTo(map);
-
-map.on('click', function(e) {
-  document.getElementById('location').value = e.latlng.lat + ', ' + e.latlng.lng;
-  marker.setLatLng(e.latlng);
-});
-    </script>
+    <div class="contact">
+      <a href="mailto:contact@parawind.info">Contact</a>
+    </div>
+    <script src="leaflet.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
