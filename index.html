@@ -15,7 +15,10 @@
     <div class="frame">
       <div id="map"></div>
       <form id="form" action="https://parawind.us12.list-manage.com/subscribe/post?u=2dce060824ff8f04a3bc42c73&amp;id=6709713fd7" method="post">
-        <input name="LOCATION" value="48.06534,8.01349" id="location" type="hidden">
+        <div>
+          <label>Location (Latitude, Longitude)</label>
+          <input name="LOCATION" value="48.06534,8.01349" type="text" required pattern="^-?[0-9]*(.[0-9]*)?,\s?-?[0-9]*(.[0-9]*)?$" id="location">
+        </div>
         <div>
           <label>Maximum Wind Speed (km/h)</label>
           <input name="WIND_MAX" type="number" min="1" max="50" step="1" required placeholder="e.g. 20">
