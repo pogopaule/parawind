@@ -18,8 +18,8 @@ button:hover {
 }
 
 .fine-print {
-  color: #ccc;
-  font-size: 8px;
+  color: #bbb;
+  font-size: 9px;
   margin-left: 10px;
 }
 
@@ -62,7 +62,7 @@ input:focus {
 }
 
 #map {
-  height: 373px;
+  height: 404px;
 }
 
 #form {

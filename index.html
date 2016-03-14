@@ -21,6 +21,10 @@
           <input name="LOCATION" value="48.06534, 8.01349" type="text" required pattern="^-?[0-9]*(.[0-9]*)?,\s?-?[0-9]*(.[0-9]*)?$" id="location">
         </div>
         <div>
+          <label>Minimum Wind Speed (km/h)</label>
+          <input name="WIND_MIN" type="number" min="0" max="50" step="1" value="0" placeholder="e.g. 0">
+        </div>
+        <div>
           <label>Maximum Wind Speed (km/h)</label>
           <input name="WIND_MAX" type="number" min="1" max="50" step="1" required placeholder="e.g. 20">
         </div>
