@@ -4,8 +4,14 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png').addTo(map);
 
 var marker = L.marker(mapCenter).addTo(map);
 
-map.on('click', function(e) {
+marker.on('move', function(e) {
   document.getElementById('location').value = e.latlng.lat + ', ' + e.latlng.lng;
+});
+
+map.on('click', function(e) {
+  marker.setLatLng(e.latlng);
+});
+map.on('locationfound', function(e) {
   marker.setLatLng(e.latlng);
 });
 
@@ -44,3 +50,4 @@ function updateWindDirection() {
 }
 
 updateWindDirection(); // draw the thin circle
+map.locate({setView : true});
